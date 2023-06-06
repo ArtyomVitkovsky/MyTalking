@@ -54,9 +54,9 @@ namespace Modules.GameModule.Scripts.Environment
                 grainIntensity = 
                     grainThresholdCurve.Evaluate(timePercent) * screenCoefficient
                     - typeDifference / 10f;
-                if (grainIntensity > 1 && filmGrain.type.value != defaultType)
+                if (grainIntensity > 1 && filmGrain.type.GetValue<FilmGrainLookup>() != defaultType)
                 {
-                    filmGrain.type.value++;
+                    filmGrain.type.SetValue(new IntParameter(filmGrain.type.GetValue<int>() + 1));
                 }
                 filmGrain.intensity.value = grainIntensity;
             }
