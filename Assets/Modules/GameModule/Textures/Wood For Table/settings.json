@@ -1,0 +1,22 @@
+{
+  "prompt_text": "wood for coffee table",
+  "patch": {
+    "ext": "png",
+    "dtype": "uint8",
+    "width": 512,
+    "height": 512,
+    "url": "https://static.withpoly.com/v3-voronoi/textures/patches/c7040e2b-18d1-4bce-bcf9-667691d2b612.png",
+    "patch_id": "Zkshk87GoN"
+  },
+  "seamless_prompt_text": "wood for coffee table",
+  "seamless_patch_scale": 0.8,
+  "upscale_prompt_text": "wood for coffee table",
+  "upscale_resolution": 1024,
+  "is_seamless": true,
+  "pbr_mode": "general",
+  "pbr_generate_color": true,
+  "pbr_generate_normal": true,
+  "pbr_generate_height": true,
+  "pbr_generate_ao": true,
+  "pbr_generate_roughness": true
+}
