@@ -25,12 +25,15 @@ namespace Modules.GameModule.Scripts
         private Rigidbody grabbedRigidbody;
         private Collider grabbedCollider;
 
+        private Ray ray;
+
         private Collider hittedCollider;
 
         private float grabDuration;
         
         private PlayerCamera playerCamera;
         private InputService inputService;
+
         [Inject]
         private void Construct(PlayerCamera playerCamera, InputService mobileInputService)
         {
@@ -60,7 +63,7 @@ namespace Modules.GameModule.Scripts
 
         private void Punch(Vector2 position)
         {
-            var ray = playerCamera.Camera.ScreenPointToRay(
+            ray = playerCamera.Camera.ScreenPointToRay(
                 new Vector3(
                     position.x,
                     position.y,
@@ -95,7 +98,7 @@ namespace Modules.GameModule.Scripts
         
         private void Grab(Vector2 position)
         {
-            var ray = playerCamera.Camera.ScreenPointToRay(
+            ray = playerCamera.Camera.ScreenPointToRay(
                 new Vector3(
                     position.x,
                     position.y,
@@ -135,7 +138,7 @@ namespace Modules.GameModule.Scripts
 
         private void SetHittedCollider(Vector2 position)
         {
-            var ray = playerCamera.Camera.ScreenPointToRay(
+            ray = playerCamera.Camera.ScreenPointToRay(
                 new Vector3(
                     position.x,
                     position.y,
@@ -155,20 +158,6 @@ namespace Modules.GameModule.Scripts
             if(grabbedTransform == null) return;
             
             dragRigidbody.DragObject(hit, grabbedRigidbody);
-
-            
-                // var targetPosition = hit.point;
-                // targetPosition.z = 
-                //     grabbedCollider == hit.collider 
-                //         ? grabbedTransform.position.z 
-                //         : hit.point.z;
-                //
-                // var lerpPosition = Vector3.Lerp(
-                //     grabbedTransform.position, 
-                //     targetPosition, 
-                //     Time.deltaTime * grabForce);
-                //
-                // grabbedTransform.position = lerpPosition;
         }
         
         private void Drop(Vector2 position)

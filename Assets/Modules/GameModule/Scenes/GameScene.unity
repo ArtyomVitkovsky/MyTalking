@@ -15,12 +15,12 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.000017359853, g: 0.000017359853, b: 0.000017359853, a: 1}
+  m_FogColor: {r: 0.6263103, g: 0.6263103, b: 0.6263103, a: 1}
   m_FogMode: 2
   m_FogDensity: 0.02
   m_LinearFogStart: 0
   m_LinearFogEnd: 50
-  m_AmbientSkyColor: {r: 0.9999882, g: 0.99998426, b: 0.9999821, a: 1}
+  m_AmbientSkyColor: {r: 0.074618734, g: 0.052870903, b: 0.08444989, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 0
@@ -1596,7 +1596,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.99998236, g: 0.99998236, b: 0.99998236, a: 1}
+  m_Color: {r: 0.010161483, g: 0.010161483, b: 0.010161483, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -1606,7 +1606,7 @@ Light:
     m_Type: 2
     m_Resolution: 1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 0.8
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -1654,7 +1654,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 536435105}
-  m_LocalRotation: {x: 0.18301274, y: 0.6830127, z: -0.6830127, w: 0.18301274}
+  m_LocalRotation: {x: -0.1663657, y: 0.73994213, z: 0.6208852, w: 0.19826692}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6364,11 +6364,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DirectionalLight: {fileID: 536435106}
   Preset: {fileID: 11400000, guid: 09a2f07656a740f4d84c4137fbdb8761, type: 2}
-  TimeOfDay: 12
+  TimeOfDay: 0.6666667
   sunRotationY: 150
   sunRotationZ: 0
   postProcessSystem: {fileID: 1668661090}
-  isRealTime: 0
+  isRealTime: 1
 --- !u!4 &1551221649
 Transform:
   m_ObjectHideFlags: 0
@@ -6747,9 +6747,9 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.25
-      inSlope: -0.5
-      outSlope: -0.5
+      value: 0.4
+      inSlope: -0.8
+      outSlope: -0.8
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
@@ -6765,9 +6765,9 @@ MonoBehaviour:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
-      value: 0.25
-      inSlope: 0.5
-      outSlope: 0.5
+      value: 0.4
+      inSlope: 0.8
+      outSlope: 0.8
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -8302,8 +8302,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2115416295}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 8, z: 2.5}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 5.25, z: -3.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8321,7 +8321,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.8039216, b: 0.7411765, a: 1}
+  m_Color: {r: 1, g: 0.8677816, b: 0.8254717, a: 1}
   m_Intensity: 10
   m_Range: 15
   m_SpotAngle: 30

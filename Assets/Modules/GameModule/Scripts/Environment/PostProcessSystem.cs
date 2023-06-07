@@ -70,9 +70,9 @@ namespace Modules.GameModule.Scripts.Environment
                 chromaticAberration.intensity.value = aberrationIntensity;
             }
             
-            if (chromaticAberration != null)
+            if (lensDistortion != null)
             {
-                lensDistortionIntensity = aberrationIntensityCurve.Evaluate(timePercent);
+                lensDistortionIntensity = lensDistortionCurve.Evaluate(timePercent);
                 lensDistortion.intensity.value = lensDistortionIntensity;
             }
 

@@ -20,7 +20,8 @@ namespace Modules.GameModule.Scripts.Ragdoll
             if (ragdollNodes.Count == 0)
             {
                 var childRb = GetComponentsInChildren<Rigidbody>();
-
+                ragdollNodes.Capacity = childRb.Length;
+                
                 foreach (var rigidbody in childRb)
                 {
                     var nodeGO = rigidbody.gameObject;
