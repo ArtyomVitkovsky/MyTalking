@@ -8,18 +8,31 @@ namespace Modules.GameModule.Scripts.Environment
     {
         [SerializeField] private Volume volume; 
         
-        [Header("Bloom")]
-        private Bloom bloom;
+        [Header("BLOOM")]
         [SerializeField] private float bloomThreshold;
         [SerializeField] private AnimationCurve bloomThresholdCurve;
 
-        [Header("Film grain")] 
-        private FilmGrain filmGrain;
+        [Header("FILM GRAIN")] 
         [SerializeField] private float grainIntensity;
         [SerializeField] private FilmGrainLookup defaultType;
         [SerializeField] private AnimationCurve grainThresholdCurve;
         [SerializeField] private Vector2 referenceResolution;
+        
+        [Header("CHROMATIC ABERRATION")]
+        [SerializeField] private float aberrationIntensity;
+        [SerializeField] private AnimationCurve aberrationIntensityCurve;
+        
+        [Header("LENS DISTORTION")]
+        [SerializeField] private float lensDistortionIntensity;
+        [SerializeField] private AnimationCurve lensDistortionCurve;
 
+
+        private Bloom bloom;
+        private FilmGrain filmGrain;
+        private ChromaticAberration chromaticAberration;
+        private LensDistortion lensDistortion;
+
+        
         private void Start()
         {
             if (!volume.profile.TryGet(out bloom))
@@ -29,7 +42,17 @@ namespace Modules.GameModule.Scripts.Environment
 
             if (!volume.profile.TryGet(out filmGrain))
             {
-                Debug.LogError("Volume don't have a filmGrain override");
+                Debug.LogError("Volume don't have a film Grain override");
+            }
+            
+            if (!volume.profile.TryGet(out lensDistortion))
+            {
+                Debug.LogError("Volume don't have a lens Distortion override");
+            }
+            
+            if (!volume.profile.TryGet(out chromaticAberration))
+            {
+                Debug.LogError("Volume don't have a chromatic Aberration override");
             }
         }
 
@@ -40,6 +63,19 @@ namespace Modules.GameModule.Scripts.Environment
                 bloomThreshold = bloomThresholdCurve.Evaluate(timePercent);
                 bloom.threshold.value = bloomThreshold;
             }
+            
+            if (chromaticAberration != null)
+            {
+                aberrationIntensity = aberrationIntensityCurve.Evaluate(timePercent);
+                chromaticAberration.intensity.value = aberrationIntensity;
+            }
+            
+            if (chromaticAberration != null)
+            {
+                lensDistortionIntensity = aberrationIntensityCurve.Evaluate(timePercent);
+                lensDistortion.intensity.value = lensDistortionIntensity;
+            }
+
             
             if (filmGrain != null)
             {
