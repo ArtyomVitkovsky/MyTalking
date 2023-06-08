@@ -58,7 +58,7 @@ namespace Modules.GameModule.Scripts
 
         private void Awake()
         {
-            debugTransform.gameObject.SetActive(Debug.isDebugBuild);
+            debugTransform.gameObject.SetActive(false);
         }
 
         private void Punch(Vector2 position)
